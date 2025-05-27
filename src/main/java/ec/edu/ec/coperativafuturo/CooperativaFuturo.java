@@ -16,35 +16,36 @@ public class CooperativaFuturo {
     }
 
     public static void main(String[] args) {
+Persona p1 = new Persona("Welinton Sacon", "1102321456", "Wilo@mail.com");
+Persona p2 = new Persona("Elena Tapuy");
 
-        Personas p1 = new Personas("Ana Pérez", "1102321456", "ana@mail.com");
-        Personas p2 = new Personas("Carlos Rojas");
+Cuentas c1 = new Cuentas(p1, "ahorro", 500);
+Cuentas c2 = new Cuentas(p1, "corriente");
+Cuentas c3 = new Cuentas(p2, "ahorro", 1000);
 
-        Cuentas c1 = new Cuentas(p1, "ahorro", 500);
-        Cuentas c2 = new Cuentas(p1, "corriente");
-        Cuentas c3 = new Cuentas(p2, "ahorro", 1000);
 
-        System.out.println("\n--- Estado Inicial ---");
+
+        System.out.println(" Estado Inicial ");
         c1.imprimir();
         System.out.println();
         c2.imprimir();
 
-        System.out.println("\n--- Depósito ---");
+        System.out.println(" Depósito ");
         c2.depositar(200);
         c2.imprimir();
 
-        System.out.println("\n--- Retiro ---");
+        System.out.println("Retiro ");
         boolean exitoRetiro = c1.retirar(100);
         System.out.println("Retiro exitoso: " + exitoRetiro);
         c1.imprimir();
 
-        System.out.println("\n--- Transferencia ---");
+        System.out.println("Transferencia ");
         boolean exitoTransf = c1.transferir(200, c3);
         System.out.println("Transferencia exitosa: " + exitoTransf);
 
-        System.out.println("\n--- Cuenta Origen ---");
+        System.out.println("\n Cuenta Origen ");
         c1.imprimir();
-        System.out.println("\n--- Cuenta Destino ---");
+        System.out.println("\nCuenta Destino ");
         c3.imprimir();
 
         double tasa = 5.0;
@@ -53,11 +54,11 @@ public class CooperativaFuturo {
         modificarTasa(tasa);
         System.out.println("Tasa después de función: " + tasa);
 
-        System.out.println("\n--- Paso por referencia ---");
+        System.out.println("\n Paso por referencia ---");
         aplicarInteres(c3, 10);
         c3.imprimir();
 
-        System.out.println("\n--- Cierre de cuenta ---");
+        System.out.println(" Cierre de cuenta ");
         c2.cerrarCuenta();
         c2.imprimir();
 

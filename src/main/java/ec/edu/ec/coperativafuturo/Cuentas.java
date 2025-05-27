@@ -16,8 +16,12 @@ public class Cuentas {
         this.saldo = saldoInicial;
     }
 
-    public Cuentas(Personas titular, String tipo) {
+    public Cuentas(Persona titular, String tipo) {
         this(titular, tipo, 0);
+    }
+
+    private Cuentas(Persona titular, String tipo, int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     public int getNumero() {
